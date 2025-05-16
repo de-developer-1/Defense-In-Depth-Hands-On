@@ -1,0 +1,26 @@
+version: '3'
+services:
+  postfix:
+    build: ./postfix
+    ports:
+      - "25:25"
+    volumes:
+      - ./postfix:/etc/postfix
+    depends_on:
+      - dovecot
+      - opendkim
+
+  dovecot:
+    build: ./dovecot
+    ports:
+      - "110:110"
+      - "143:143"
+    volumes:
+      - ./dovecot:/etc/dovecot
+
+  opendkim:
+    build: ./opendkim
+    ports:
+      - "8891:8891"
+    volumes:
+      - ./opendkim:/etc/opendkim

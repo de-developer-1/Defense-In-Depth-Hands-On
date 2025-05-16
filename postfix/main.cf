@@ -1,0 +1,5 @@
+myhostname = mail.example.local
+mydomain = example.local
+...
+smtpd_milters = inet:opendkim:8891
+non_smtpd_milters = $smtpd_milters

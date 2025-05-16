@@ -1,0 +1,9 @@
+$ORIGIN example.local.
+@ IN SOA ns1.example.local. admin.example.local. (
+  2025050201 ; serial
+  3600       ; refresh
+  1800       ; retry
+  604800     ; expire
+  86400 )    ; minimum
+...
+selector1._domainkey IN TXT ( "v=DKIM1; k=rsa; p=MIIBIj..." )
